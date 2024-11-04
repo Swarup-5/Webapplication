@@ -1,0 +1,36 @@
+﻿    @page  
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    @{
+        for(int i=0;i<10;i++)
+    {
+        <p>Good Morning</p>
+    }
+    }
+    <form class="login-form" onsubmit=" login()">
+        <div class="inner-form">
+            <input type="text" id="firstname" placeholder="Enter Username"> Username <br><br>
+            <input type="password" id="password" placeholder="Enter Password"> Password<br><br>
+           <button type="button" onclick="login()" id="btn" >LOGIN-IN</button> 
+            <p id="error-message" style="color: red;"></p>
+        </div>
+@{
+        if(TempData["messageLogin"] != null)
+        {
+
+        <h1>@TempData["messageLogin"]</h1>
+
+        }
+}
+    </form>
+</div>
+
+    
+  

@@ -1,0 +1,205 @@
+﻿     @page
+ @model Webapplication.Pages.AdminHomepageModel
+ @{
+     ViewData["Title"] = "Admin Home Page";
+ }
+
+
+
+ <div class="d-flex">
+     <div>
+     <!-- Left Sidebar Navigation -->
+     <nav  class="navbar navbar-dark bg-secondary  d-flex  align-items-center vh-50 flex-column p-0" style="width: 220px; height: 355px;">
+         <a class="navbar-brand " href="#" style="margin-bottom: 0;">Nav-Bar</a>
+             <ul class=" nav nav-tabs nav flex-column mt-5  mb-5 p-0 m-0">
+                 <li class="nav-item  p-2">
+                     <a class="nav-link nav-link text-dark navbar bg-primary data-bs-theme="dark"" asp-page="/Admin/Product">Product</a>
+             </li>
+             <li class="nav-item p-1 ">
+                     <a class="nav-link nav-link text-dark navbar bg-primary data-bs-theme="dark"  text-dark" asp-page="/UserManagement">User-Signup</a>
+             </li>
+             <li class="nav-item p-1">
+                     <a class="nav-link  nav-link text-dark navbar bg-primary data-bs-theme="dark" text-dark" asp-page="/Reports">Reports</a>
+             </li>
+             <li class="nav-item p-1">
+                    <a class="nav-link  nav-link text-dark navbar bg-primary data-bs-theme=" dark" text-dark" asp-page="/Settings">Settings</a>
+             </li>
+                 <li class="nav-item p-1">
+                    <a class="nav-link  nav-link text-dark navbar bg-primary data-bs-theme=" dark" text-dark" asp-page="/Settings">Log-out</a>
+                 </li>
+                 <li class="nav-item p-1">
+                    <a class="nav-link  nav-link text-dark navbar bg-primary data-bs-theme=" dark" text-dark" asp-page="/Settings">See-update</a>
+                 </li>
+               
+                
+         </ul>
+     </nav>
+ </div>  
+ <div class="container">
+    
+
+    
+    
+     <table class="border-2 table table-dark bg-black table-striped">
+         <thead class="border-3 ">
+             <tr class="text-center">
+             <th class="border p-3 text-danger text-center ">Avatar</th>
+                    <th class="border p-3 text-danger"></th>
+             <th class="border p-3 text-danger">LastName</th>
+             <th class="border p-3 text-danger">Age</th>
+             <th class="border p-3 text-danger">Email</th>       
+             <th class="border p-3 text-danger">Course</th>
+                 <th class="border p-3 text-danger">User-Status</th>
+                 <th class="border p-3 text-danger">IS-Active</th>
+                 <th class="border p-3 text-danger"></th>
+         </tr>
+         </thead>
+
+        
+           
+                 @{
+                     foreach (var adminHomepages in @Model.AdminHomepages)
+                     {
+                 <tr class="text-center "  >
+                       
+                        <td>
+                            <img src="/Images/@adminHomepages.imagepath" class="rounded" height="100" width="100" />
+                        </td>
+                     <td class="border-3   p-2 ">@adminHomepages.FistName</td>
+                     <td class="border-3 p-2 ">@adminHomepages.LastName</td>
+                     <td class="border-3 p-2 ">@adminHomepages.age</td>
+                     <td class="border-3 p-2 ">@adminHomepages.Email</td>
+                     <td class="border-3 p-2 ">@adminHomepages.Course</td>
+
+
+                     <td class=" border-3 p-2 text-center">
+
+                         @if (adminHomepages.isActive.Equals(true))
+                         {
+
+                             <span class="btn btn-success"> Active</span>
+                         }
+
+
+                         else
+                         {
+                             <span class="btn btn-danger ">Inactive</span>
+                         }
+
+                     </td>
+
+
+
+
+                     <td class=" bg-black d-flex border-3 gap-2 text-center">
+                        
+                             @if (adminHomepages.isActive.Equals(true))
+                         {
+                           <form method="post" asp-page-handler="Update" 
+                           asp-route-id="@adminHomepages.Id" asp-route-status= false>
+                             <button class="btn btn-danger" type="submit">Disable </button>
+                             </form>
+                         }
+
+                          // asp-page-handler-- used to specify the handler method name to process request
+                         else    
+                         {    
+                             <form method="post"  asp-page-handler="Updates" 
+                             asp-route-id="@adminHomepages.Id" 
+                         asp-route-newstatus=true>
+                                 <button class="btn btn-success" type="submit">Enable</button>
+                              </form>
+                             }
+
+                             <form method="post" asp-page-handler="Deleterecords"
+                               asp-route-id="@adminHomepages.Id" >
+                                <button class="btn btn-danger" type="submit">Delete</button>
+                                </form>
+
+
+                        
+                             <a class="btn btn-warning " asp-route-id="@adminHomepages.Id" asp-page="Editform">Edit</a>
+                      
+                       
+                  
+                 </tr>
+                     }
+                 }
+           
+        
+     </table>
+ </div>
+  </div>@* 
+      <div class="container">
+         <div class="row">
+
+
+   
+              @{
+                  foreach (var adminHomepages in @Model.AdminHomepages)
+                  {
+                      <div class="col-lg-3 ">
+                      <div class="card p-2 ">
+                  <img src="./inspiration-login-forms-list-1024x655.png.webp" class="card-img-top" alt="...">
+                          <div class="card-body border-2 ">
+                      <h5 class="card-title">User-Details</h5>
+                    
+                          <p class="border-3 ">@adminHomepages.FistName</p>
+                          <p class="border-3 ">@adminHomepages.LastName</p>
+                          <p class="border-3 ">@adminHomepages.age</p>
+                          <p class="border-3 ">@adminHomepages.Email</p>
+                          <p class="border-3 ">@adminHomepages.Course</p>
+                          <button type="submit">Click Me</button>
+                    </div> 
+                      </div>
+                      </div>
+                  }
+              }
+
+          </div>
+      </div> *@
+
+
+
+
+ <table class="border-2 table table-dark table-striped">
+     <thead class="border-3 ">
+         <tr class="text-center">
+             <th class="border p-3 text-danger text-center ">Product</th>
+             <th class="border p-3 text-danger">Category</th>
+             <th class="border p-3 text-danger">Description</th>
+             <th class="border p-3 text-danger">Price</th>
+             <th class="border p-3 text-danger">Quantity</th>
+             <th class="border p-3 text-danger">Is-Active</th>
+           
+         </tr>
+     </thead>
+
+
+
+     @{
+         foreach (var prodd in @Model.prodcuttablecs)
+         {
+             <tr class="text-center">
+                 <td class="border-3 p-2 ">@prodd.Name</td>
+                 <td class="border-3 p-2 ">@prodd.Category</td>
+                 <td class="border-3 p-2 ">@prodd.Description</td>
+                 <td class="border-3 p-2 ">@prodd.Price</td>
+                 <td class="border-3 p-2 ">@prodd.Quantity</td>
+                 <td class="border-3 p-2 ">@prodd.IsActive</td>
+
+                 </tr>
+
+         }
+
+
+
+
+
+
+                   
+         }
+     
+      
+    
+

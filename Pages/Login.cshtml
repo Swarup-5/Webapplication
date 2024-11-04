@@ -1,0 +1,68 @@
+﻿@page
+@model Webapplication.Pages.LoginModel
+@{
+
+    ViewData["Title"] = "Login page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Please Login to Enter the Website.</p>
+    
+   @*  <form class="login-form" onsubmit=" login()">
+        <div class="inner-form">
+            <input type="text" id="firstname" placeholder="Enter Username"> Username <br><br>
+            <input type="password" id="password" placeholder="Enter Password"> Password<br><br>
+            <button type="button" onclick="login()" id="btn">LOGIN-IN</button>
+            <p id="error-message" style="color: red;"></p>
+        </div> 
+    </form> *@
+    <form method="post">
+        <div>
+@*         <div>
+            <label asp-for ="lc.Name"></label>
+            <input asp-for="lc.Name" class="form-cntrol" /><br><br>
+                <span asp-validation-for="lc.Name" class="text-danger">
+                </span>
+            
+        </div>  
+ *@        <div>
+            <label asp-for="lc.Email"></label>
+            <input asp-for="lc.Email" class="form-cntrol" /><br><br>
+            <span asp-validation-for="lc.Email" class="text-danger"></span>
+        </div>
+
+
+            <div>
+                <label asp-for="lc.Password"></label>
+                <input asp-for="lc.Password" class="form-cntrol" /><br><br>
+                <span asp-validation-for="lc.Password" class="text-danger"></span>
+            </div>
+
+           
+       @*  <div>
+            <label asp-for="lc.Message"></label>
+            <textarea asp-for="lc.Message" class="form-cntrol"></textarea><br><br>
+
+        </div> *@
+
+        <div>
+        <button type="submit" accesskey="sendlogin">Send</button>
+        <button type="submit" asp-page-handler="Clear">Clear</button>
+        </div>
+
+        <div>
+                @{
+                   
+
+                    if (TempData["messageLoginfailed"]!= null)
+                    {
+                        <p>Login Not Sucessfull</p>
+                    }
+
+            }
+        </div>
+        </div>
+    </form>
+
+</div>

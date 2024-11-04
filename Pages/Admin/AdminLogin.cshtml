@@ -1,0 +1,47 @@
+﻿@page
+@model Webapplication.Pages.AdminLoginModel
+@{
+
+    ViewData["Title"] = "Admin Login Page";
+}
+
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Please Login to Enter the Website.</p>
+    <form class="border-5" method="post">
+          <div>
+        <label asp-for="adminclass.Adminname"></label>
+                <input asp-for="adminclass.Adminname" class="text-danger border-5"></span>
+        <span asp-validation-for="adminclass.Adminname" class="text-danger"></span>
+            </div>
+
+
+            <div>
+        <label asp-for="adminclass.Adminpassowrd"></label>
+            <input asp-for="adminclass.Adminpassowrd" class="form-cntrol border-5 mt-3" /><br><br>
+        <span asp-validation-for="adminclass.Adminpassowrd" class="text-danger"></span>
+            </div>
+
+
+          
+
+            <div>
+            <button type="submit" class="form-cntrol border-5 mt-3">Login</button>
+                
+            </div>
+
+            <div>
+                @{
+
+
+                    if (TempData["messageLoginfailed"] != null)
+                    {
+                        <p>Login Not Sucessfull</p>
+                    }
+
+                }
+            </div>
+    </form>
+        </div>
+    

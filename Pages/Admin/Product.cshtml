@@ -1,0 +1,75 @@
+﻿
+
+@page
+@model Webapplication.Pages.Shared.ProductModel
+@{
+
+    
+}
+  
+// /inspiration-login-forms-list-1024x655.png.webp
+
+<div class="row">
+
+    <div class=" border border-2 bg-primar  p-5 col-md-6 col-sm-12">
+
+        <h1>Please Enter Product Details </h1>
+        <img src="./inspiration-login-forms-list-1024x655.png.webp" class=" img-fluid" alt="...">
+
+    </div>
+    <div class=" border-secondary border border-6 bg-secondary p-5  align-content-around col-md-6 col-sm-12">
+        <form method="post">
+
+            <div>
+                <label class="form-label " asp-for="product.Name"></label>
+                <input class="form-control " asp-for="product.Name" class="form-cntrol" /><br><br>
+                <span class="mb-5" asp-validation-for="product.Name" class="text-danger"></span>
+            </div>
+
+
+
+            <div>
+                <label class="form-label " asp-for="product.Category"></label>
+                <input class="form-control " asp-for="product.Category" class="form-cntrol" /><br><br>
+                <span asp-validation-for="product.Category" class="text-danger"></span>
+            </div>
+
+            <div>
+                <label class="form-label" asp-for="product.Price"></label>
+                <input class="form-control" asp-for="product.Price" class="form-cntrol" /><br><br>
+                <span asp-validation-for="product.Price" class="text-danger"></span>
+            </div>
+
+            <div>
+                <label class="form-label" asp-for="product.Quantity"></label>
+                <input class="form-control" asp-for="product.Quantity"class="form-cntrol"></input><br><br>
+
+            </div>
+
+
+            <div>
+                <label class="form-label" asp-for="product.Description "></label>
+                <input class=" form-control" asp-for="product.Description  " class="form-cntrol"></input><br><br>
+                <span asp-validation-for="product.Description " class="text-danger"></span>
+
+            </div>
+
+          @*   <div>
+                <label class="form-labe" asp-for="product.Is_active">Available</label>
+                <input class="form-control" asp-for="product.Is_active" class="form-cntrol" /><br><br>
+                <span asp-validation-for="product.Is_active" class="text-danger"></span>
+            </div> *@
+
+            
+
+            <div>
+                <button type="submit">SAVE</button>
+           
+            </div>
+
+        </form>
+    </div>
+
+
+</div>
+

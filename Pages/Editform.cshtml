@@ -1,0 +1,131 @@
+﻿@page
+@model Webapplication.Pages.EditformModel
+@{
+    ViewData["Title"] = "Edit Home Page";
+}
+
+@* 
+<div class="row">
+
+    <div class="col-lg-12">
+        <form method="post"> 
+            <di
+    
+
+<div class="text-center">
+    <h1 class="display-4">Welcome:</h1>
+    <p>Please Login to Enter the Website.</p>
+   
+   *@
+       
+@*             <div class="inner-form login-container">
+             <input type="text" id="firstname" placeholder="Enter Firstname" value="@Model.ffname"> Firstname <br><br>
+            <input type="text" id="lastname" placeholder="Enter Lastname" value="@Model.llname" > Lastname <br><br>
+            <input type="password" id="password" placeholder="Enter Password">Create Password<br><br>
+            <input type="text" id="email" placeholder="abc@gmail.com"> email-id <br><br>
+            <button class="signup-button"    type="button" onclick="login()" id="btn">sign-up</button>
+            <p id="error-message" style="color: red;"></p>
+        </div> *@
+
+
+    @*     <div class="container"> 
+             <div class="row ">
+            <div class=" border   col-lg-6 col-md-3 ">First division</div>
+            <div class=" border col-lg-4 col-md-3 ">First division</div>
+            <div class=" border  col-lg-2 col-md-3">First division</div>
+            <div class=" border col-lg-6 col-md-3 ">First division</div>
+
+            </div>
+            
+
+    
+        <div class="row mt-5 ">
+            <div class=" border col-md-6 col-lg-2 ">First division</div>
+            <div class=" border  col-md-6 col-lg-auto">First division</div>
+            <div class=" border  col-md-6 col-lg-auto">First division</div>
+            <div class=" border  col-md-6 col-lg-auto">First division</div>
+
+        </div>
+
+    </div>  *@
+
+
+
+
+         
+
+    <div class="row">
+
+            <div class=" border border-2 bg-primar  p-5 col-md-6 col-sm-12">
+
+                <h1>Please Enter Login Details </h1>
+            <img src="./inspiration-login-forms-list-1024x655.png.webp" class=" img-fluid" alt="...">
+
+            </div>
+        <div class=" border-secondary border border-6 bg-secondary p-5  align-content-around col-md-6 col-sm-12">
+             <form method="post">
+           
+            <div>   
+            <label class="form-label " asp-for="newusersigns.firstname"></label>
+            <input  class="form-control " asp-for="newusersigns.firstname" class="form-cntrol" /><br><br>
+            <span  class="mb-5"   asp-validation-for="newusersigns.firstname" class="text-danger"></span>
+            </div>
+
+                
+          
+            <div >
+                    <label class="form-label " asp-for="newusersigns.lastname "></label>
+                    <input class="form-control "  asp-for="newusersigns.lastname " class="form-cntrol  /><br><br>
+            <span asp-validation-for="newusersign.lastname" class="text-danger"></span>
+            </div>
+
+        <div>
+                    <label class="form-label" asp-for="newusersigns.age"></label>
+                    <input class="form-control" asp-for="newusersigns.age" class="form-cntrol" /><br><br>
+            <span asp-validation-for="newusersigns.age" class="text-danger"></span>
+        </div>
+
+            <div>
+                    <label class="form-label" asp-for="newusersigns.password"></label>
+                    <input class="form-control" asp-for="newusersigns.password" class="form-cntrol"></input><br><br>
+
+            </div>
+
+
+        <div>
+            <label  class="form-label"  asp-for="newusersigns.confirmpasword "></label>
+            <input  class=" form-control"asp-for="newusersigns.confirmpasword " class="form-cntrol"></input><br><br>
+                    <span asp-validation-for="newusersigns.confirmpasword" class="text-danger"></span>
+
+        </div>
+
+        <div>
+            <label class="form-labe" asp-for="newusersigns.email">email</label>
+            <input  class="form-control" asp-for="newusersigns.email" class="form-cntrol" /><br><br>
+            <span asp-validation-for="newusersigns.email" class="text-danger"></span>
+        </div>
+
+        @* <div>
+               <select class="mb-5" asp-for="newusersigns.CourseList"  class="form-control">
+               <option>Select Course</option>
+               
+            </select>
+        </div> *@
+              
+            <div>
+                <button type="submit" >Save</button>
+                
+            </div>
+         
+        </form>
+        </div>
+
+
+    </div>
+
+                
+            </div>
+
+       
+    </div>
+</div>

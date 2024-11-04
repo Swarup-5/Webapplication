@@ -1,0 +1,47 @@
+﻿@page
+@model Webapplication.Pages.CommonmessageModel
+@{
+    ViewData["Title"] = "Commonmessage page";
+}
+
+<div>        
+    @{
+        if (TempData["messageLogin"] != null)
+        {
+            <h1>@TempData["messageLogin"]</h1>
+        }
+        else {
+            <h1>@TempData["messageSign-up"]</h1>
+        }
+
+    }
+
+</div>
+  <form>
+
+      <div class="container">
+@{
+    if (TempData["messageLogin"] != null)
+    {
+            <div>
+                <p class="text-danger"> click me to visit Home-Page </p>
+                <button type="submit" asp-page="Index">Index  </button>
+            </div>
+           
+        }
+        else
+        {
+            <div>
+                <p class="text-danger"> click me to visit Login-page </p>
+                <button type="submit" asp-page="Login">Login  </button>
+            </div>
+            
+        }
+
+}
+</div>
+</form>
+
+
+  
+
